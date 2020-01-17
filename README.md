@@ -11,3 +11,5 @@ The user will start the game by pressing the user button.
 After the user lets go of the user button it will flash a sequence. 
 The user must flash the corresponding buttons in the exact order the lights were flashed.
 Each round there will be another led added and the time required to "win" the round decreases each time.
+
+When the game ends all of the leds will flash 4 times
