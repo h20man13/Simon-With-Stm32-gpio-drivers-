@@ -1,6 +1,6 @@
 #include <stdbool.h>
 #include "io/gpio.h"
-#include "io/gpiomacs.h"
+
 void sleep(uint32_t f)
 {
   for(volatile uint32_t i = 0; i < f; i++);
@@ -79,8 +79,8 @@ int main()
   {
     int turn[size];
     for(int i = 0; i < size; i++){
-      turn[i] = rand() % size;
-    }
+      //turn[i] = rand() % size; use own random function
+     }
     for(int i = 0; i < size; i++){
       Configure_ODR(outputs[turn[i]], on);
       sleep(100000);
