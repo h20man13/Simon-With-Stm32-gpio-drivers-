@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include "io/gpio.h"
 
-void sleep(uint32_t f)
+inline void sleep(uint32_t f)
 {
   for(volatile uint32_t i = 0; i < f; i++);
 }
