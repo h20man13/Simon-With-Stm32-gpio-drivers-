@@ -1,12 +1,15 @@
 #include <stdbool.h>
 #include "io/gpio.h"
+#include "rand/rand.h"
 
-inline void sleep(uint32_t f)
+void sleep(uint32_t f)
 {
   for(volatile uint32_t i = 0; i < f; i++);
 }
 int main()
 {
+  //Initialize seed
+  seed(64);
   //initialize structs to hold adresses
   GPIO_Struct startbutton;
   GPIO_Struct led1;
@@ -79,8 +82,8 @@ int main()
   {
     int turn[size];
     for(int i = 0; i < size; i++){
-      //turn[i] = rand() % size; use own random function
-     }
+      turn[i] = sudo_randomUint32() % size;
+    }
     for(int i = 0; i < size; i++){
       Configure_ODR(outputs[turn[i]], on);
       sleep(100000);
